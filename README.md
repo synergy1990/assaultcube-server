@@ -6,8 +6,7 @@ It downloads the linux binaries (a .tar.bz2 archive) from the official AssaultCu
 extracts it (default: /opt/acserver)
 and runs the server with a couple of options like max players, server description, server message and master password.
 
-# The directorys where all the AssaultCube files go.
-- DATA_DIR              = "/opt/acserver"
+# All relevant files will go into /opt/acserver (of the container of course)
 
 # Four launch parameters for the server I find helpful:
 - PLAYERCOUNT        = "8"
