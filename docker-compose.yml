@@ -1,0 +1,20 @@
+services:
+  assaultcubeserver:
+    image: synergy90/assaultcubeserver
+    container_name: assaultcubeserver
+    ports:
+      - 28763:28763/udp
+      - 28764:28764/udp
+    environment:
+      DATA_DIR: "/opt/acserver"
+      PLAYERCOUNT: 8
+      SERVER_DESCRIPTION : "synergy2k' AssaultCube server"
+      SERVER_MODT: "Greetings from synergy2k"
+      MASTER_PASSWORD: synergy2k
+      GAME_PARAMS: -c${PLAYERCOUNT} -n${SERVER_DESCRIPTION} -o${SERVER_MODT} -x${MASTER_PASSWORD}
+      UMASK: 000
+      UID: 99
+      GID: 100
+      USER: "assaultcuber"
+      DATA_PERM: 770
+    restart: unless-stopped
